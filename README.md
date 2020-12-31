@@ -266,7 +266,7 @@ Display hidden control characters:
 
 Search for all files containing a pattern in a directory; copy them to another directory
 
-    find search_directory/ -type f | grep -iP 'pattern' | cpio -pdm copy_directory/
+    find search_directory/ -type f | grep -P 'pattern' | cpio -pdm copy_directory/
 
     -p: pipes list of files from STDIN
     -d: creates directories as necessary
