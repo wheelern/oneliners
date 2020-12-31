@@ -253,7 +253,7 @@ Take a fasta file with a bunch of short scaffolds, e.g., labeled `>Scaffold12345
 
 Display hidden control characters:
 
-    python -c "f = open('file.txt', 'r'); f.seek(0); file = f.readlines(); print file" 
+    python -c "f = open('file.txt', 'r'); f.seek(0); file = f.readlines(); print file"
 
 
 ## find, xargs, and GNU parallel
@@ -262,6 +262,15 @@ Display hidden control characters:
 
 
 *Download GNU parallel at <https://www.gnu.org/software/parallel/>.*
+
+
+Search for all files containing a pattern in a directory; copy them to another directory
+
+    find search_directory/ -type f | grep -iP 'pattern' | cpio -pdm copy_directory/
+
+    -p: pipes list of files from STDIN
+    -d: creates directories as necessary
+    -m: sets file modification time on created files to match those in the source
 
 
 Search for .bam files anywhere in the current directory recursively:
@@ -598,4 +607,3 @@ Exclude a column with cut (e.g., all but the 5th field in a tab-delimited file):
 Find files containing text (`-l` outputs only the file names, `-i` ignores the case `-r` descends into subdirectories)
 
     grep -lir "some text" *
-
