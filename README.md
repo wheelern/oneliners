@@ -607,3 +607,7 @@ Exclude a column with cut (e.g., all but the 5th field in a tab-delimited file):
 Find files containing text (`-l` outputs only the file names, `-i` ignores the case `-r` descends into subdirectories)
 
     grep -lir "some text" *
+    
+Recursively rename (change file extension) files in a directory:
+
+    for f in *.TIF; do mv -- "$f" "${f%.TIF}.tif"; done
